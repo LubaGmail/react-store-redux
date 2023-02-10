@@ -12,7 +12,7 @@ import {
 
 const CategoriesPreview = () => {
     const { categoriesMap } = useContext(CategoriesContext)
-    
+
     return (
         <>
             {

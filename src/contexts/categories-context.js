@@ -3,12 +3,12 @@ import { createContext, useState, useEffect } from 'react';
 import { getCategories } from '../utils/firebase/firebase';
 
 export const CategoriesContext = createContext({
-    categoriesMap: [],
+    categoriesMap: []
 });
 
 export const CategoriesProvider = ({ children }) => {
     const [categoriesMap, setCategoriesMap] = useState({});
-    const value = { categoriesMap };         // put an array inside value which must be an object
+    const value = { categoriesMap };         
 
     useEffect(() => {
         const getData = async() => {

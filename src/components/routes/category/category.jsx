@@ -24,10 +24,15 @@ const Category = () => {
         <CategoryContainer>
             <Title>{category.toUpperCase()}</Title>
             <ProductContainer>
-                { products &&
+                {/* { products &&
                     products.map((product) => (
                         <Product key={product.id} product={product} />
                     ))
+                } */}
+                {
+                    products?.map((product) => (
+                        <Product key={product.id} product={product} />
+                    ))  
                 }
             </ProductContainer>
         </CategoryContainer>
