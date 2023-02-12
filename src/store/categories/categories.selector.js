@@ -1,1 +1,3 @@
-export const selectCategoriesMap = (state) => state.categories.categoriesMap;
+export const selectCategoriesMap = (state) => {
+    return state.categories.categoriesMap;
+}
