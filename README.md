@@ -7,6 +7,7 @@ Setup
 
 Redux
     Single Point of Truth
+    index.js    <Provider store={store}>
 
 CategoryContext.value
     categoriesMap:     {Object}

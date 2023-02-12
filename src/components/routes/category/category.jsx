@@ -8,7 +8,7 @@ import {
     CategoryContainer,
     Title,
     ProductContainer
-} from './category-preview.styles'
+} from './category.styles'
 
 const Category = () => {
     const { category } = useParams();
