@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
-import { selectCategoriesMap } from '../../../store/categories/categories.selector'
+import { selectCategories } from '../../../store/categories/categories.selector'
 import Product from '../../product/product';
 
 import {
@@ -14,7 +14,15 @@ import {
 const Category = () => {
     // routes/shop   <Route path=':category' element={<Category />} />
     const { category } = useParams();
-    const categoriesMap = useSelector(selectCategoriesMap)
+    const categories = useSelector(selectCategories)
+
+    const categoriesMap = categories.reduce(
+        (acc, { title, items }) => {
+          acc[title.toLowerCase()] = items;
+          return acc;
+        },
+        {}
+      );
     const [products, setProducts] = useState(categoriesMap[category]);
 
     useEffect(() => {
@@ -25,11 +33,6 @@ const Category = () => {
         <CategoryContainer>
             <Title>{category.toUpperCase()}</Title>
             <ProductContainer>
-                {/* { products &&
-                    products.map((product) => (
-                        <Product key={product.id} product={product} />
-                    ))
-                } */}
                 {
                     products?.map( product => (
                         <Product key={product.id} product={product} />

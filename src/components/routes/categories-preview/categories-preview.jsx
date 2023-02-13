@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 import Product from '../../product/product'
-import { selectCategoriesMap } from '../../../store/categories/categories.selector'
+import { selectCategories } from '../../../store/categories/categories.selector'
 
 import {
     CategoryPreviewContainer,
@@ -11,7 +11,14 @@ import {
 } from './category-preview.styles'
 
 const CategoriesPreview = () => {
-    const categoriesMap = useSelector(selectCategoriesMap);
+    const categories = useSelector(selectCategories);
+    const categoriesMap = categories.reduce(
+        (acc, { title, items }) => {
+          acc[title.toLowerCase()] = items;
+          return acc;
+        },
+        {}
+      );
 
     return (
         <>
