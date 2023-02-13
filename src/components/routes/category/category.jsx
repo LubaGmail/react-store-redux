@@ -14,15 +14,7 @@ import {
 const Category = () => {
     // routes/shop   <Route path=':category' element={<Category />} />
     const { category } = useParams();
-    const categories = useSelector(selectCategories)
-
-    const categoriesMap = categories.reduce(
-        (acc, { title, items }) => {
-          acc[title.toLowerCase()] = items;
-          return acc;
-        },
-        {}
-      );
+    const categoriesMap = useSelector(selectCategories)
     const [products, setProducts] = useState(categoriesMap[category]);
 
     useEffect(() => {

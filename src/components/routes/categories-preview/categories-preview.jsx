@@ -11,14 +11,7 @@ import {
 } from './category-preview.styles'
 
 const CategoriesPreview = () => {
-    const categories = useSelector(selectCategories);
-    const categoriesMap = categories.reduce(
-        (acc, { title, items }) => {
-          acc[title.toLowerCase()] = items;
-          return acc;
-        },
-        {}
-      );
+    const categoriesMap = useSelector(selectCategories);
 
     return (
         <>
