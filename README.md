@@ -3,20 +3,12 @@ Setup
         npm i sass      npm i react-router-dom      npm i firebase
         npm i styled-components
         npm i redux react-redux redux-logger
+        npm i reselect
     npm start     
 
 Redux
     Single Point of Truth
     index.js    <Provider store={store}>
-
-CategoryContext.value
-    categoriesMap:     {Object}
-        hats:  Array(9)
-            [0]:  {id: 1, price: 25, ...
-        jackets: Array(5)
-            [0]:  {id: 21, price: 165, ...
-
-
 
 Netify
     https://app.netlify.com/signup/start/connect
