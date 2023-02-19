@@ -11,3 +11,6 @@ export const selectCartTotalCount = (state) => {
     }, 0)
     return total
 }
+export const selectIsCartOpen = (state) => {
+    return state.cart.isCartOpen
+}
