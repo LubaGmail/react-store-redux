@@ -4,6 +4,7 @@ import { useDispatch , useSelector} from 'react-redux';
 import { CartContext } from '../../contexts/cart-context';
 import { selectCart, selectCartItems } from '../../store/cart/cart.selector';
 import { CART_ACTION_TYPES } from '../../store/cart/cart.types';
+import { addItemToCart } from '../../store/cart/cart.actions';
 
 import { ProductContainer, FooterContainer } from './product.styles';
 
@@ -25,25 +26,10 @@ const Product = ({ product }) => {
                 [[Prototype]]: Array(0)
     */
 
-    const isItemInCart = (product, items) => {
-        return items.find(el => el.id === product.id)
-    }
-    const updateQuantity = (product, items) => {
-        return items.map(el => {
-            if (el.id === product.id) {
-                ++el.quantity
-            }
-            return el
-        })
-    }   
-
     const addCartItem = (product) => {
-        let items = [...cartItems]
-        isItemInCart(product, items) ? items = updateQuantity(product, items) : items.push({ ...product, quantity: 1 })
-        
         dispatch({
             type: CART_ACTION_TYPES.SET_CART_ITEMS,
-            payload: items
+            payload: addItemToCart(product, cartItems)
         })
     }
 
