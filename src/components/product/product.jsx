@@ -26,29 +26,20 @@ const Product = ({ product }) => {
     */
 
     const isItemInCart = (product, items) => {
-        const res = items.find(el => el.id === product.id)
-        return res
+        return items.find(el => el.id === product.id)
     }
     const updateQuantity = (product, items) => {
-        const updatedItems = items.map(el => {
+        return items.map(el => {
             if (el.id === product.id) {
                 ++el.quantity
-               
             }
             return el
         })
-        
-        return updatedItems
     }   
 
     const addCartItem = (product) => {
         let items = [...cartItems]
-        if (isItemInCart(product, items)) {
-            items = updateQuantity(product, items)
-        } else {
-            items.push({ ...product, quantity: 1 })
-            console.log('items',items)
-        }
+        isItemInCart(product, items) ? items = updateQuantity(product, items) : items.push({ ...product, quantity: 1 })
         
         dispatch({
             type: CART_ACTION_TYPES.SET_CART_ITEMS,
@@ -72,7 +63,7 @@ const Product = ({ product }) => {
 
             <p onClick={ () => addCartItem (product)}
             >
-                Add to cart
+                addCartItem
             </p>
         </ProductContainer>
 
