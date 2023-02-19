@@ -1,12 +1,13 @@
-import { useContext } from "react"
+import { useSelector } from 'react-redux'
 
-import { CartContext } from '../../contexts/cart-context'
+import { selectCartItems, selectCartTotalCost } from '../../store/cart/cart.selector'
 import CheckoutItem from '../checkout-item/checkout-item'
 
 import { CheckoutContainer } from "./checkout-list.styles"
 
 const CheckoutList = () => {
-    const { cartItems, cartPriceTotal } = useContext(CartContext)
+    const cartItems = useSelector(selectCartItems)
+    const totalCost = useSelector(selectCartTotalCost)
     
     return (
         <>
@@ -30,8 +31,8 @@ const CheckoutList = () => {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colSpan={2}>Price Total: </th>
-                            <td colSpan={4}>${cartPriceTotal}</td>
+                            <th colSpan={2}>Total Cost: </th>
+                            <td colSpan={4}>${totalCost}</td>
                         </tr>
                     </tfoot>
                 </table>

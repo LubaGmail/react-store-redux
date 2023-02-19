@@ -11,6 +11,13 @@ export const selectCartTotalCount = (state) => {
     }, 0)
     return total
 }
+export const selectCartTotalCost = (state) => {
+    const { cartItems } = state.cart
+    const cost = cartItems.reduce((accum, el) => {
+        return accum = accum + el.price * el.quantity
+    }, 0)
+    return cost
+}
 export const selectIsCartOpen = (state) => {
     return state.cart.isCartOpen
 }
