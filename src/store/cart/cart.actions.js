@@ -1,10 +1,10 @@
 const isItemInCart = (product, items) => {
     return items.find(el => el.id === product.id)
 }
-const updateQuantity = (product, items) => {
+const updateQuantity = (product, items, minus=false) => {
     return items.map(el => {
         if (el.id === product.id) {
-            ++el.quantity
+            minus ? --el.quantity : ++el.quantity
         }
         return el
     })
@@ -17,16 +17,15 @@ export const addItemToCart = (product, items) => {
 
 export const removeItemFromCart = (product, items) => {
     let updatedItems = items.filter(el => el.id !== product.id)
+    return updatedItems
+}
 
+export const increaseItemQuantity = (product, items) => {
+    let updatedItems = updateQuantity(product, items)
     return updatedItems
 }
 
 export const reduceItemQuantity = (product, items) => {
-    let updatedItems = items.map(el => {
-        if (el.id === product.id) {
-            --el.quantity
-        }
-        return el
-    })
+    let updatedItems = updateQuantity(product, items, true)
     return updatedItems
 }

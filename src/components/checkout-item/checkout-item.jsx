@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { selectCartItems } from "../../store/cart/cart.selector"
-import { addItemToCart, reduceItemQuantity, removeItemFromCart } from '../../store/cart/cart.actions'
+import { addItemToCart, increaseItemQuantity, removeItemFromCart } from '../../store/cart/cart.actions'
 import { CART_ACTION_TYPES } from '../../store/cart/cart.types'
 
 import { ImageContainer, ClickableSpan, ClickableTd } from './checkout-item.styles'
@@ -20,7 +20,7 @@ const CheckoutItem = ({ item }) => {
         if  (!(x < 2) ) {
             dispatch({
                 type: CART_ACTION_TYPES.SET_CART_ITEMS,
-                payload: reduceItemQuantity(item, cartItems)
+                payload: increaseItemQuantity(item, cartItems)
             })
             quantityRef.current.innerText = x.toString()
         }
