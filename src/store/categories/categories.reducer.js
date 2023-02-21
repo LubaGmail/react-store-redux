@@ -1,5 +1,16 @@
 import CATEGORIES_ACTION_TYPES from './categories.types';
 
+/**
+    
+    (state) categories: 
+        categories: Array(5)    ['hats', 'jackets', 'Mens', 'Sneakers', 'Womens']
+        0:  
+            items (9)      [{id: 1, name: 'Brown Brim', price: 25, ...}]
+            title: 'Hats'
+        1: 
+            ...
+ */
+
 export const CATEGORIES_INITIAL_STATE = {
     categories: [],
 };

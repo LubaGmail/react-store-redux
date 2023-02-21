@@ -5,7 +5,7 @@ import { CartContext } from "../../contexts/cart-context"
 import { ImageContainer, ClickableSpan, ClickableTd } from './checkout-item.styles'
 
 const CheckoutItem = ({item}) => {
-    const { id, name, imageUrl, price, quantity } = item
+    const { name, imageUrl, price, quantity } = item
     const quantityRef = useRef()
      const { updateItemQuantity, removeItem } = useContext(CartContext)
  

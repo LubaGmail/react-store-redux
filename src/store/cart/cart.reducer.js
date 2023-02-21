@@ -5,10 +5,13 @@ const INITIAL_CART_STATE = {
     isCartOpen: false
 }
 
+/**
+    state = {cartItems: Array(0), isCartOpen: false}
+  */
+
 export const cartReducer = (state = INITIAL_CART_STATE, action = {}) => {
     const { type, payload } = action
-    
-    // state:  {cartItems: Array(0), isCartOpen: true}
+
     switch (type) {
         case CART_ACTION_TYPES.SET_CART_ITEMS:
             return { ...state, cartItems: payload }
