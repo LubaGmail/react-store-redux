@@ -1,8 +1,7 @@
 import CATEGORIES_ACTION_TYPES from './categories.types';
 
 /**
-    
-    (state) categories: 
+    (state slice) = categories: 
         categories: Array(5)    ['hats', 'jackets', 'Mens', 'Sneakers', 'Womens']
         0:  
             items (9)      [{id: 1, name: 'Brown Brim', price: 25, ...}]
