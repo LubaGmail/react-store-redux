@@ -41,6 +41,18 @@ export const CheckoutContainer = styled.div `
         }
     }
 
+    button {
+        margin-top: 2rem;
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        color: black;
+    }
+    button:disabled {
+        color: silver;
+        cursor: none;
+    }
+
 `
 
 

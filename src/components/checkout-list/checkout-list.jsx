@@ -1,6 +1,8 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { selectCartItems, selectCartTotalCost } from '../../store/cart/cart.selector'
+import { CART_ACTION_TYPES } from '../../store/cart/cart.types'
+
 import CheckoutItem from '../checkout-item/checkout-item'
 
 import { CheckoutContainer } from "./checkout-list.styles"
@@ -8,6 +10,13 @@ import { CheckoutContainer } from "./checkout-list.styles"
 const CheckoutList = () => {
     const cartItems = useSelector(selectCartItems)
     const totalCost = useSelector(selectCartTotalCost)
+    const dispatch = useDispatch()
+
+    const clearCart = () => {
+        dispatch({
+            type: CART_ACTION_TYPES.CLEAR_CART
+        })
+    }
     
     return (
         <>
@@ -36,6 +45,10 @@ const CheckoutList = () => {
                         </tr>
                     </tfoot>
                 </table>
+
+                <button onClick={clearCart} disabled={cartItems.length === 0} >
+                    Clear Cart 
+                </button>
             </CheckoutContainer>
         </>
     )
