@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
-import Product from '../../product/product'
-import { selectCategories } from '../../../store/categories/categories.selector'
+import Product from '../../components/product/product'
+import { selectCategories } from '../../store/categories/categories.selector'
 
 import {
     CategoryPreviewContainer,

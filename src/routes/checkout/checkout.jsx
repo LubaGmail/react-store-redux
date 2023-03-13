@@ -1,4 +1,4 @@
-import CheckoutList from "../../checkout-list/checkout-list"
+import CheckoutList from '../../components/checkout-list/checkout-list'
 
 const Checkout = () => {
    

@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Nav from './components/navigation/nav'
-import Home from './components/routes/home/home';
-import Auth from './components/routes/auth/auth'
+import Home from './routes/home/home';
+import Auth from './routes/auth/auth'
 import Test from './components/test/test'
-import Shop from './components/routes/shop/shop'
-import Checkout from './components/routes/checkout/checkout';
+import Shop from './routes/shop/shop'
+import Checkout from './routes/checkout/checkout';
 
 const App = () => {
   return (

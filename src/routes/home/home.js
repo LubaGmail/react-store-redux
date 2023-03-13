@@ -1,4 +1,4 @@
-import CategoryList from "../../categories/categories-list";
+import CategoryList from '../../components/checkout-list/checkout-list'
 
 /**
   <Route path='/' element={<Home />} >

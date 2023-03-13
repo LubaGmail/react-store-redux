@@ -2,8 +2,8 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
-import { selectCategories } from '../../../store/categories/categories.selector'
-import Product from '../../product/product';
+import { selectCategories } from '../../store/categories/categories.selector'
+import Product from '../../components/product/product'
 
 import {
     CategoryContainer,
