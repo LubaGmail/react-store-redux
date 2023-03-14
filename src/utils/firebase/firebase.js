@@ -64,12 +64,13 @@ export const getCategories = async () => {
     return querySnapshot.docs.map((doc) => doc.data());
 }
 
-export const getFeatured = async () => {
+export const getAllProducts = async () => {
     const collectionRef = collection(db, 'categories');
     const q = query(collectionRef);
     const querySnapshot = await getDocs(q);
-    let items = querySnapshot.docs.map((doc) => doc.data());
-    console.log('items', items)
+    let items = querySnapshot.docs.map((doc) => doc.data().items);
+    
+    return items;
 }
 
 // doc based on user.uid and user.accessToken
