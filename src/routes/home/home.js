@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import CategoryList from '../../components/categories/categories-list';
+import ProductsList from '../../components/products/products-list.jsx';
 import { PRODUCTS_ACTION_TYPES } from '../../store/products/products.types';
 import { getAllProducts } from '../../utils/firebase/firebase';
 
@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-       <CategoryList />
+       <ProductsList />
     </>
      
   );
