@@ -15,6 +15,6 @@ feature/featured-products TODO:
     2.  move routes from components to src/                             x
     3.  replace place-holder Home with list of featured products        x
     4.  create redux util to create actions                             x
-    5.  style Home
+    5.  style Home                                                      x
     6.  replace master with the feature branch
-    
+
