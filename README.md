@@ -16,5 +16,12 @@ feature/featured-products TODO:
     3.  replace place-holder Home with list of featured products        x
     4.  create redux util to create actions                             x
     5.  style Home                                                      x
-    6.  replace master with the feature branch
+    6.  replace master with the feature branch                          x
+        git checkout develop
+        git merge -s ours master
+        git checkout master
+        git merge develop
+            git branch -d  local_branch_name
+
+    
 
