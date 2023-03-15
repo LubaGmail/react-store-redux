@@ -13,6 +13,7 @@ Redux
 feature/featured-products TODO:
     1.  close cart dropdown on navigate to checkout                     x
     2.  move routes from components to src/                             x
-    3.  replace place-holder Home with list of featured products
+    3.  replace place-holder Home with list of featured products        x
     4.  create redux util to create actions
+    5.  style Home
 

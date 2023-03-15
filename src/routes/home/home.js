@@ -4,21 +4,27 @@ import { useDispatch } from 'react-redux';
 import ProductsList from '../../components/products/products-list.jsx';
 import { PRODUCTS_ACTION_TYPES } from '../../store/products/products.types';
 import { getAllProducts } from '../../utils/firebase/firebase';
+import { createAction } from '../../utils/firebase/reducer/reducer.utils.js';
 
-/**
-  <Route path='/' element={<Home />} >
-    <Route path='toys' element={<Toys />} />
- */
 const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getData = async() => {
       const products = await getAllProducts();
-      dispatch({
-        type: PRODUCTS_ACTION_TYPES.SET_PRODUCTS,
-        payload: products
-      })
+      
+      /**
+        Object
+          payload: (5) [Array(9), Array(5), Array(6), Array(8), Array(7)]
+          type:  "products/SET_PRODUCTS"
+       */
+      const action = createAction(PRODUCTS_ACTION_TYPES.SET_PRODUCTS, products);
+      dispatch(action)
+
+      // dispatch({
+      //   type: PRODUCTS_ACTION_TYPES.SET_PRODUCTS,
+      //   payload: products
+      // })
     }  
     getData();
   
