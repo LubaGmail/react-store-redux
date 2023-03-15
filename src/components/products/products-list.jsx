@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { selectFeatured } from '../../store/products/products.selector';
-import ProductItem from './product-item';
+import Product from '../product/product';
 
 import { ProductsContainer, Logo } from './products-list.styles';
 
@@ -19,7 +19,7 @@ const ProductsList = () => {
         {
           featuredArr.map(el => (
             <li key={el.id}>
-              <ProductItem product={el} />
+              <Product product={el} />
             </li>
           ))
         }
