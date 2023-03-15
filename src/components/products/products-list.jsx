@@ -4,16 +4,17 @@ import { useSelector } from 'react-redux';
 import { selectFeatured } from '../../store/products/products.selector';
 import ProductItem from './product-item';
 
-import { ProductsContainer } from './products-list.styles';
+import { ProductsContainer, Logo } from './products-list.styles';
 
 const ProductsList = () => {
   const featuredArr = useSelector(selectFeatured);
   
   return (
     <>
-      <h3>
+      <Logo>
         <Link to='/shop'>Shop Now!</Link>
-      </h3>
+      </Logo>
+
       <ProductsContainer>
         {
           featuredArr.map(el => (
