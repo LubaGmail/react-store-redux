@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import ProductsList from '../../components/products/products-list.jsx';
 import { PRODUCTS_ACTION_TYPES } from '../../store/products/products.types';
 import { getAllProducts } from '../../utils/firebase/firebase';
-import { createAction } from '../../utils/firebase/reducer/reducer.utils.js';
+import { createAction } from '../../utils/reducer/reducer.utils.js';
 
 const Home = () => {
   const dispatch = useDispatch();
