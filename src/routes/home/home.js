@@ -12,12 +12,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async() => {
       const products = await getAllProducts();
-      
-      /**
-        Object
-          payload: (5) [Array(9), Array(5), Array(6), Array(8), Array(7)]
-          type:  "products/SET_PRODUCTS"
-       */
+
       const action = createAction(PRODUCTS_ACTION_TYPES.SET_PRODUCTS, products);
       dispatch(action)
 
