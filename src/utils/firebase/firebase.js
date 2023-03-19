@@ -60,7 +60,8 @@ export const getCategories = async () => {
     const collectionRef = collection(db, 'categories');
     const q = query(collectionRef);
     const querySnapshot = await getDocs(q);
-    // [ {items: [{id, name, price, imageUrl}], title: 'hats'} ]
+    
+    // throw new Error('Error fetching categories');
     return querySnapshot.docs.map((doc) => doc.data());
 }
 
