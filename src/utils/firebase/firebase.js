@@ -70,6 +70,7 @@ export const getAllProducts = async () => {
     const querySnapshot = await getDocs(q);
     let items = querySnapshot.docs.map((doc) => doc.data().items);
     
+    // throw new Error('Error fetching products');
     return items;
 }
 

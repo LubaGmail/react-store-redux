@@ -10,9 +10,16 @@ Redux
     Single Point of Truth
     index.js    <Provider store={store}>
 
-redux-persist
+redux-thunk
+    allows to pass actions as functions
+        thunk-middleware = store => next => action => {
+            if (typeof action === 'function') {
+                action(dispatch)
+            }
+        }
+    
     store.js
-        create and export persist-reducer
-    index.js
-        add PersistGate wrapper
+        add thunk to the middleWares
+    
+    
 
