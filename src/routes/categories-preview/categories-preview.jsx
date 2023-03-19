@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 import Product from '../../components/product/product'
-import { selectCategories } from '../../store/categories/categories.selector'
+import { selectCategories, selectLoading } from '../../store/categories/categories.selector'
+import Spinner from '../../components/spinner/spinner';
 
 import {
     CategoryPreviewContainer,
@@ -12,27 +13,33 @@ import {
 
 const CategoriesPreview = () => {
     const categoriesMap = useSelector(selectCategories);
+    const loading = useSelector(selectLoading);
 
     return (
         <>
             {
-                Object.keys(categoriesMap).map((title, i) => (
-                    <CategoryPreviewContainer key={i}>
-                        <Link to={`/shop/${title}`}>
-                            <Title>{title.toUpperCase()}</Title>
-                        </Link>
-                        <Preview>
-                            {
-                                categoriesMap[title].map((p, i) => (
-                                    <span key={i}>
-                                        {i < 4 && <Product product={p} />}
-                                    </span>
-                                ))
-                            }
-                        </Preview>
-                    </CategoryPreviewContainer>
-                ) )
-            }   
+                loading ? (
+                    <Spinner />
+                ): (
+                    Object.keys(categoriesMap).map((title, i) => (
+                        <CategoryPreviewContainer key={i}>
+                            <Link to={`/shop/${title}`}>
+                                <Title>{title.toUpperCase()}</Title>
+                            </Link>
+                            <Preview>
+                                {
+                                    categoriesMap[title].map((p, i) => (
+                                        <span key={i}>
+                                            {i < 4 && <Product product={p} />}
+                                        </span>
+                                    ))
+                                }
+                            </Preview>
+                        </CategoryPreviewContainer>
+                    ) )    
+                )
+            }
+         
         </>
     )
 }

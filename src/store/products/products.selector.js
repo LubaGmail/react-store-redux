@@ -15,3 +15,7 @@ export const selectFeatured = state => {
     })
     return featured;
 }
+
+export const selectLoading = state => {
+    return state.products.loading;
+}
