@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import ProductsList from '../../components/products/products-list.jsx';
-import { PRODUCTS_ACTION_TYPES } from '../../store/products/products.types';
-import { getAllProducts } from '../../utils/firebase/firebase';
+import ProductsList from '../../components/featured/featured-list.jsx';
+import { FEATURED_ACTION_TYPES } from '../../store/featured/featured.types';
+import { getFeaturedProducts } from '../../utils/firebase/firebase';
 import { createAction } from '../../utils/reducer/reducer.utils.js';
 
 const Home = () => {
@@ -11,20 +11,15 @@ const Home = () => {
 
   useEffect(() => {
     const getData = async() => {
-      const products = await getAllProducts();
-      
-      /**
-        Object
-          payload: (5) [Array(9), Array(5), Array(6), Array(8), Array(7)]
-          type:  "products/SET_PRODUCTS"
-       */
-      const action = createAction(PRODUCTS_ACTION_TYPES.SET_PRODUCTS, products);
-      dispatch(action)
+      const featured = await getFeaturedProducts();
 
-      // dispatch({
-      //   type: PRODUCTS_ACTION_TYPES.SET_PRODUCTS,
-      //   payload: products
-      // })
+      // const action = createAction(PRODUCTS_ACTION_TYPES.SET_PRODUCTS, featured);
+      // dispatch(action)
+
+      dispatch({
+        type: FEATURED_ACTION_TYPES.SET_FEATURED,
+        payload: featured
+      })
     }  
     getData();
   

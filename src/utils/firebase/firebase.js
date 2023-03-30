@@ -64,6 +64,22 @@ export const getCategories = async () => {
     return querySnapshot.docs.map((doc) => doc.data());
 }
 
+export const getFeaturedProducts = async () => {
+    const collectionRef = collection(db, 'categories');
+    const q = query(collectionRef);
+    const querySnapshot = await getDocs(q);
+    let items = querySnapshot.docs.map((doc) => doc.data().items);
+    const featured = [];
+    items.forEach((items) => {
+        items.forEach(item => {
+            if (item.featured) {
+                featured.push(item)
+            }
+        })
+    })
+    return featured;
+}
+
 export const getAllProducts = async () => {
     const collectionRef = collection(db, 'categories');
     const q = query(collectionRef);

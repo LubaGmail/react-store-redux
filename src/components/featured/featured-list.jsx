@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { selectFeatured } from '../../store/products/products.selector';
+import { selectFeatured} from '../../store/featured/featured.selector';
 import Product from '../product/product';
 
-import { ProductsContainer, Logo } from './products-list.styles';
+import { ProductsContainer, Logo } from './featured-list.styles';
 
-const ProductsList = () => {
+const FeaturedList = () => {
   const featuredArr = useSelector(selectFeatured);
-  
+   
   return (
     <>
       <Logo>
@@ -29,4 +29,4 @@ const ProductsList = () => {
   );
 }
 
-export default ProductsList;
+export default FeaturedList;
