@@ -3,10 +3,9 @@ Setup
         npm i sass      npm i react-router-dom      npm i firebase
         npm i styled-components
         npm i redux react-redux redux-logger
-        npm i reselect
+        npm install --save typescript @types/node @types/react @types/react-dom @types/jest
     npm start     
 
-Redux
-    Single Point of Truth
-    index.js    <Provider store={store}>
+ts
+    tsconfig.json
 
