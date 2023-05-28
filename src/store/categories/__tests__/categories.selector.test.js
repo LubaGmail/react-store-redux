@@ -1,4 +1,4 @@
-import { selectCategoriesSlice, selectCategoriesArray, selectCategoriesMap } from '../categories.selector'; 
+import { selectState, selectCategoriesSlice, selectCategoriesArray, selectCategoriesMap } from '../categories.selector'; 
 
 /**
     state = {categories: {…}, cart: {…}}                               obj of objs
@@ -7,6 +7,7 @@ import { selectCategoriesSlice, selectCategoriesArray, selectCategoriesMap } fro
  */
 
 describe('categoriesSelector tests', () => {
+
     test('select categories slice', () => {
         const mockState = {
             cart: {
@@ -65,5 +66,28 @@ describe('categoriesSelector tests', () => {
         expect(values).toEqual([[], []]);
     });
     
+    test('select the entire state', () => {
+        const mockState = {
+            // categories: {…}, cart: {…}, products: {…}}
+            categories: {
+                categories: [
+                    {
+                        items: [],
+                        title: 'Hats'
+                    },
+                    {
+                        items: [],
+                        title: 'Jackets'
+                    }
+                ]
+            },
+            cart: {
+                cartItems: [],
+                isCartOpen: false
+            }
+        }
+        let res = selectState(mockState);
+        expect(res).toEqual(mockState);
+    })
 });
 

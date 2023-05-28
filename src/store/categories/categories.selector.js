@@ -22,3 +22,8 @@ export const selectCategoriesMap = (state) => {
   return categoriesMap;
 }
 
+export const selectState = (state) => {
+  return state;
+}
+
+
