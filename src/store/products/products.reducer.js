@@ -4,7 +4,7 @@ const INITIAL_PRODUCTS_STATE = {
     products: []
 }
 
-export const productsReducer = (state=INITIAL_PRODUCTS_STATE, action={}) => {
+export const productsReducer = (state = INITIAL_PRODUCTS_STATE, action = {}) => {
     const { type, payload } = action;
     switch (type) {
         case PRODUCTS_ACTION_TYPES.SET_PRODUCTS:

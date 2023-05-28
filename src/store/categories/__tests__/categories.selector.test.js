@@ -36,7 +36,6 @@ describe('categoriesSelector tests', () => {
                 }
             }
         }
-        //  { items: [], title: 'Hats' }
         const res = selectCategoriesArray(mockState);
         expect(res.title).toEqual('Hats');
         expect(res.items).toEqual([]);
@@ -65,7 +64,6 @@ describe('categoriesSelector tests', () => {
         expect(keys).toEqual(['hats', 'jackets']);
         expect(values).toEqual([[], []]);
     });
-    
     test('select the entire state', () => {
         const mockState = {
             // categories: {…}, cart: {…}, products: {…}}

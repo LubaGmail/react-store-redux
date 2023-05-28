@@ -29,7 +29,9 @@ describe('categoriesReducer tests', () => {
               ],
             },
         ];
-        const initialState = [];
+        const initialState = {
+            categories: [],
+        };
         const expectedState = {
             ...initialState,
             categories: mockData,
@@ -43,7 +45,6 @@ describe('categoriesReducer tests', () => {
                 payload: mockData
             }
         )
-
         expect(res).toEqual(expectedState);
     });
     test('invalid abc test', () => {
@@ -57,9 +58,7 @@ describe('categoriesReducer tests', () => {
               ],
             },
         ];
-        const initialState = [];
-        const notExpectedState = {
-            ...initialState,
+        const initialState = {
             categories: [],
         };
 
@@ -71,7 +70,6 @@ describe('categoriesReducer tests', () => {
                 payload: mockData
             }
         )
-
         expect(res).toEqual(initialState);
     });
 });
