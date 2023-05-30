@@ -5,7 +5,7 @@ export const selectProducts = state => {
 export const selectFeatured = state => {
     const featured = [];
     const products = state.products.products;
-
+  
     products.forEach((items) => {
         items.forEach(item => {
             if (item.featured) {
@@ -14,4 +14,8 @@ export const selectFeatured = state => {
         })
     })
     return featured;
+}
+
+export const selectProductsSlice = state => {
+    return state.products;
 }

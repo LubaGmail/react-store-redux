@@ -7,7 +7,7 @@ const INITIAL_CART_STATE = {
 
 /**
     state slice = {cartItems: Array(0), isCartOpen: false}
-  */
+*/
 
 export const cartReducer = (state = INITIAL_CART_STATE, action = {}) => {
     const { type, payload } = action

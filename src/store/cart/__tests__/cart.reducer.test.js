@@ -1,7 +1,6 @@
 import { cartReducer } from "../cart.reducer"; 
 import { CART_ACTION_TYPES } from '../cart.types'; 
 
-
 describe('cartReducer tests', () => {
     test('SET_CART_ITEMS', () => {
         const initialState = {

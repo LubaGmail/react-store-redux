@@ -20,12 +20,12 @@ const Home = () => {
        */
       const action = createAction(PRODUCTS_ACTION_TYPES.SET_PRODUCTS, products);
       dispatch(action)
-
       // dispatch({
       //   type: PRODUCTS_ACTION_TYPES.SET_PRODUCTS,
       //   payload: products
       // })
     }  
+    
     getData();
   
   }, [dispatch])

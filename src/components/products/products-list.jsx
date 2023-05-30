@@ -8,7 +8,7 @@ import { ProductsContainer, Logo } from './products-list.styles';
 
 const ProductsList = () => {
   const featuredArr = useSelector(selectFeatured);
-  
+
   return (
     <>
       <Logo>
