@@ -44,7 +44,7 @@ export const CheckoutButton = styled(BaseButton)`
 `
 export const ProductButton = styled(BaseButton)`
     background-color: #bc2424;
-   color: white;
+    color: white;
 `
 
 

@@ -23,10 +23,9 @@ const getButton = (buttonType = BUTTON_TYPES.base) => {
     )
 }
 
-//   <Button buttonType='googleType'
+//   <Button buttonType='google'
 const Button = ({ children, buttonType }) => {
     const CustomButton = getButton(buttonType)
-    
     return (
         <CustomButton>
             {children}
