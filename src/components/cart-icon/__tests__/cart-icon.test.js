@@ -3,7 +3,7 @@ import { renderWithProviders } from "../../../utils/test/test.utils";
 
 import CartIcon from '../cart-icon';
 
-describe('Cart icon test', () => {
+describe('Cart icon tests', () => {
     test('Cart count', () => {
         renderWithProviders(
             <CartIcon />,
