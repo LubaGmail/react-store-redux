@@ -27,13 +27,10 @@ const CheckoutItem = ({ item }) => {
     }
     
     const addQuantity = () => {
-        let x = parseInt( (quantityRef.current.innerText).toString() )
-
         dispatch({
             type: CART_ACTION_TYPES.SET_CART_ITEMS,
             payload: increaseItemQuantity(item, cartItems)
         })
-        quantityRef.current.innerText = x.toString()
     }
 
     const handleRemoveItem = () => {
@@ -50,9 +47,9 @@ const CheckoutItem = ({ item }) => {
             </ImageContainer>
             <td>{name}</td>
             <td >
-                <ClickableSpan onClick={subtractQuantity}>  &#10094; </ClickableSpan>
+                <ClickableSpan onClick={subtractQuantity}data-testid='lt-testid'>  &#10094; </ClickableSpan>
                 <span ref={quantityRef}>{quantity}</span>
-                <ClickableSpan onClick={addQuantity}>  &#10095; </ClickableSpan>
+                <ClickableSpan onClick={addQuantity} data-testid='gt-testid'>  &#10095; </ClickableSpan>
             </td>
             <td>${price}</td>
             <ClickableTd  onClick={handleRemoveItem}>
