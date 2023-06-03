@@ -31,6 +31,30 @@ describe('Checkout list tests', () => {
         
     });
 
+    test('Total Cost must to be in the document', async() => {
+        const { store } = renderWithProviders(
+            <CheckoutList />,
+            {
+                preloadedState: {
+                    cart: {
+                        cartItems: [
+                            { id: 1, name: 'P 1', imageUrl: 'p1.gif', price: 10, quantity: 1 },
+                            { id: 2, name: 'P 2', imageUrl: 'p2.gif', price: 20, quantity: 2 },
+                            { id: 3, name: 'P 3', imageUrl: 'p2.gif', price: 30, quantity: 3 },
+                        ],
+                        isCartOpen: true
+                    }
+                }
+            }
+        );
+        
+        const totalLabelEl = screen.queryByText(/Total Cost/i);
+        expect(totalLabelEl).toBeInTheDocument();
+        const totalCostEl = screen.queryByText('$140')
+        expect(totalCostEl).toBeInTheDocument();
+        
+    });
+
     test('Clear cart', async() => {
         const { store } = renderWithProviders(
             <CheckoutList />,

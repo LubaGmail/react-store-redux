@@ -41,7 +41,7 @@ const CheckoutList = () => {
                     <tfoot>
                         <tr>
                             <th colSpan={2}>Total Cost: </th>
-                            <td colSpan={4}>${totalCost}</td>
+                            <td colSpan={4} data-testid='totalCost'>${totalCost}</td>
                         </tr>
                     </tfoot>
                 </table>
