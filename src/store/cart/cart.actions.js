@@ -5,8 +5,10 @@ const updateQuantity = (product, items, minus=false) => {
     return items.map(el => {
         if (el.id === product.id) {
             // minus ? --el.quantity : ++el.quantity
-            if (minus && el.quantity > 1) {
-                --el.quantity;
+            if (minus) {
+                if (el.quantity > 1) {
+                    --el.quantity;
+                }
             } else
             {
                 ++el.quantity;

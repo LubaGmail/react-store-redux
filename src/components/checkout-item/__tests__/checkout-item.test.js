@@ -85,7 +85,9 @@ describe('Cart Item tests', () => {
         )
 
         const gtEl = screen.getByTestId('lt-testid');
-
+        fireEvent.click(gtEl);
+        const qtyEl = store.getState().cart.cartItems[0].quantity;
+        expect(qtyEl).toEqual(1);
 
     });
 });

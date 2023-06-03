@@ -16,14 +16,10 @@ const CheckoutItem = ({ item }) => {
     const quantityRef = useRef()
   
     const subtractQuantity = () => {
-        let x = parseInt( (quantityRef.current.innerText).toString() )
-        if  (!(x < 2) ) {
-            dispatch({
-                type: CART_ACTION_TYPES.SET_CART_ITEMS,
-                payload: reduceItemQuantity(item, cartItems)
-            })
-            quantityRef.current.innerText = x.toString()
-        }
+        dispatch({
+            type: CART_ACTION_TYPES.SET_CART_ITEMS,
+            payload: reduceItemQuantity(item, cartItems)
+        })
     }
     
     const addQuantity = () => {
