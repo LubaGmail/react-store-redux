@@ -49,7 +49,7 @@ const CheckoutItem = ({ item }) => {
             </td>
             <td>${price}</td>
             <ClickableTd  onClick={handleRemoveItem}>
-                <span>&#10005;</span>
+                <span data-testid='x-testid'>&#10005;</span>
             </ClickableTd>  
         </>
     )
