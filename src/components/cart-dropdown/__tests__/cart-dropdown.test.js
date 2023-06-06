@@ -10,7 +10,6 @@ jest.mock('react-router-dom', () => ( {
     } )
 );
 
-
 describe('CartDropdown tests', () => {
     test('Cart empty test', () => {
         
@@ -69,6 +68,4 @@ describe('CartDropdown tests', () => {
     });
     
 });
-
-
 
