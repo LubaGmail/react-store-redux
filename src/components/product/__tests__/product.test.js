@@ -4,6 +4,7 @@ import { renderWithProviders } from '../../../utils/test/test.utils';
 import Product from '../product';
 
 describe('Add to cart tests', () => {
+    
     test('Add 1 product when cart is empty', async() => {
         const mockProduct = {
             id: 1, name: 'P 1',
@@ -52,6 +53,7 @@ describe('Add to cart tests', () => {
             }
         )
         const buttonEl = screen.queryByText(/add to cart/i);
+        expect(buttonEl).toBeInTheDocument();
         await fireEvent.click(buttonEl);
         const cartItems = store.getState().cart.cartItems;
         expect(cartItems.length).toEqual(1);
