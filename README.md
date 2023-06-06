@@ -10,3 +10,5 @@ Redux
     Single Point of Truth
     index.js    <Provider store={store}>
 
+Testing
+    npm test a -- --coverage

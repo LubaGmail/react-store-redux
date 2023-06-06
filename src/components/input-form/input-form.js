@@ -1,18 +1,21 @@
 import { FormInputLabel, Input, Group } from './input-form.styles';
 
-//  <InputForm id='displayName' label='Display Name' type='text' ...
-//
+/* 
+    <InputForm id='email'
+        label='Email'
+        type='email'
+        name='email'
+        value={email}
+        onChange={handleChange}
+        required 
+*/
 const InputForm = ({ label, ...otherProps }) => {
-    // const {id, type, name, value, onChange} = otherProps
+    console.log('o', otherProps)
 
     return (
         <Group>
             <Input {...otherProps} />
-            
-            {/* 
-                apply shrink class on focus or input 
-                 ${ ({ shrink }) => shrink && shrinkLabelStyles };
-            */}
+
             { label && (
                 
                 <FormInputLabel shrink={otherProps.value.length}>
