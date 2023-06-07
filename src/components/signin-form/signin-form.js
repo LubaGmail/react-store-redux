@@ -1,9 +1,9 @@
-import { useState, useContext } from 'react'
+import { useState, useContext } from 'react';
 
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword, createUserDocumentFromAuth }
-    from '../../utils/firebase/firebase'
-import InputForm from '../input-form/input-form'
-import { UserContext } from '../../contexts/user-context'
+    from '../../utils/firebase/firebase';
+import InputForm from '../input-form/input-form';
+import { UserContext } from '../../contexts/user-context';
 
 import { SignInContainer, ButtonDiv, SigninButton, GoogleButton } from './signin-form.styles'
 
@@ -11,33 +11,34 @@ const SigninForm = () => {
     const defaultFields = {
         email: '',
         pass: ''
-    }
-    const [formFields, setFormFields] = useState(defaultFields)
-    const { email, pass } = formFields
+    };
+    const [formFields, setFormFields] = useState(defaultFields);
+    const { email, pass } = formFields;
     const { currentUser } = useContext(UserContext);
     
     const handleChange = (ev) => {
         const { name, value } = ev.target
-        setFormFields( {
+        setFormFields({
             ...formFields,
             [name]: value.trim()
-        } )
-    }
+        })
+    };
 
     const logGoogleUser = async () => {
-        const { user } = await signInWithGooglePopup()
+        const { user } = await signInWithGooglePopup();
         const userDocRef = await createUserDocumentFromAuth(user);
-    }
+    };
 
     const handleSubmit = async(ev) => {
-        ev.preventDefault()
-        const { email, pass } = formFields
+        ev.preventDefault();
+        const { email, pass } = formFields;
+
         try {
             const { user } = await signInAuthUserWithEmailAndPassword(email, pass)
         } catch (error) {
-          alert(error.toString())  
-        }
-        setFormFields(defaultFields)    
+            throw new Error(error.toString());
+        };
+        setFormFields(defaultFields);    
     }
 
     return (
@@ -60,8 +61,9 @@ const SigninForm = () => {
                         value={email}
                         onChange={handleChange}
                         required 
+                        data-testid='email-input'
                     />
-                     
+
                     <InputForm id='pass'
                         label='Password'
                         type='password'  
@@ -70,16 +72,19 @@ const SigninForm = () => {
                         onChange={handleChange}
                         minLength={6}
                         required
+                        data-testid='pass-input'
                     />
 
                     <ButtonDiv>
                         <SigninButton
                             onClick={handleSubmit} disabled={currentUser}
+                            data-testid='signin-button'
                         >
                             Sign In
                         </SigninButton>
                         <GoogleButton 
                             onClick={logGoogleUser} disabled={currentUser}
+                            data-testid='google-button'
                         >
                             Google Sign In
                         </GoogleButton>
@@ -91,4 +96,4 @@ const SigninForm = () => {
     )
 }
 
-export default SigninForm
+export default SigninForm;

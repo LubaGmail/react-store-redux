@@ -10,7 +10,6 @@ import { FormInputLabel, Input, Group } from './input-form.styles';
         required 
 */
 const InputForm = ({ label, ...otherProps }) => {
-    console.log('o', otherProps)
 
     return (
         <Group>
@@ -26,4 +25,4 @@ const InputForm = ({ label, ...otherProps }) => {
     )
 }
 
-export default InputForm
+export default InputForm;
