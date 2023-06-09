@@ -67,6 +67,7 @@ const SignupForm = () => {
                         onChange={handleChange}
                         minLength={2}
                         required
+                        data-testid='display-name-testid'
                     />
 
                     <InputForm id='email'
@@ -76,6 +77,7 @@ const SignupForm = () => {
                         value={email}
                         onChange={handleChange}
                         required
+                        data-testid='email-testid'
                     />
 
                     <InputForm id='pass'
@@ -86,6 +88,7 @@ const SignupForm = () => {
                         onChange={handleChange}
                         minLength={6}
                         required
+                        data-testid='pass-testid'
                     />
 
                     <InputForm id='confirmPass'
@@ -96,15 +99,19 @@ const SignupForm = () => {
                         onChange={handleChange}
                         minLength={6}
                         required
+                        data-testid='confirm-pass-testid'
                     />
 
                     <ButtonDiv>
                         <SignupButton
                             onClick={handleSubmit} disabled={currentUser}
+                            data-testid='signup-button-testid'
                         >
                             Sign Up
                         </SignupButton>
-                        <ClearSpan onClick={handleReset}>
+                        <ClearSpan onClick={handleReset}
+                            data-testid='clear-button-testid'
+                        >
                             Clear
                         </ClearSpan>
                     </ButtonDiv >
@@ -115,4 +122,4 @@ const SignupForm = () => {
     )
 }
 
-export default SignupForm
+export default SignupForm;
