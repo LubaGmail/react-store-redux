@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom"
-import { useContext } from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
-import { UserContext } from '../../contexts/user-context';
+import { selectCurrentUser } from '../../store/user/user.selector';
+
+import USER_ACTION_TYPES from '../../store/user/user.types';
 import { signOutUser } from "../../utils/firebase/firebase";
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg'
 import CartIcon from "../cart-icon/cart-icon";
@@ -17,12 +18,16 @@ import {
 } from './nav.styles';
 
 const Nav = () => {
-    const { currentUser, setCurrentUser } = useContext(UserContext);
-    const cartOpen = useSelector(selectIsCartOpen)
-    
+    const cartOpen = useSelector(selectIsCartOpen);
+    const currentUser = useSelector(selectCurrentUser);
+    const dispatch = useDispatch();
+
     const handleSignout = async () => {
         await signOutUser();
-        setCurrentUser(null)
+        dispatch({
+            type: USER_ACTION_TYPES.SET_CURRENT_USER,
+            payload: null
+        })
     }
 
     return (

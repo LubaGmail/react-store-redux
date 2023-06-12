@@ -12,3 +12,11 @@ Redux
 
 Testing
     npm test a -- --coverage
+
+User
+    Context
+        https://www.udemy.com/course/complete-react-developer-zero-to-mastery/learn/lecture/31147848#overview
+    Context to redux
+        https://www.udemy.com/course/complete-react-developer-zero-to-mastery/learn/lecture/31426036#overview
+
+    
