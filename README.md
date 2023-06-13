@@ -19,4 +19,12 @@ User
     Context to redux
         https://www.udemy.com/course/complete-react-developer-zero-to-mastery/learn/lecture/31426036#overview
 
-    
+jest.spyOn
+    const mockDispatch = jest.fn();
+    const mockSelector = jest.fn();
+
+    jest.mock("react-redux", () => ({
+        ...jest.requireActual("react-redux"),
+        useDispatch: () => mockDispatch,
+        useSelector: () => mockSelector,
+    }));

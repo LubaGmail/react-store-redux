@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
+import { signOutUser } from "../../utils/firebase/firebase";
 
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from '../../store/user/user.selector';
-
 import USER_ACTION_TYPES from '../../store/user/user.types';
-import { signOutUser } from "../../utils/firebase/firebase";
+
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg'
 import CartIcon from "../cart-icon/cart-icon";
 import CartDropdown from "../cart-dropdown/cart-dropdown";

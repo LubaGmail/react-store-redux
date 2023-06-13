@@ -10,6 +10,7 @@ import { selectCurrentUser } from '../../store/user/user.selector'
 import { SignInContainer, ButtonDiv, SigninButton, GoogleButton } from './signin-form.styles'
 
 const SigninForm = () => {
+
     const defaultFields = {
         email: '',
         pass: ''
@@ -75,8 +76,8 @@ const SigninForm = () => {
                         name='email'
                         value={email}
                         onChange={handleChange}
-                        data-testid='email-input'
                         disabled={currentUser}
+                        data-testid='email-testid'
                     />
 
                     <InputForm id='pass'
@@ -86,20 +87,20 @@ const SigninForm = () => {
                         value={pass}
                         onChange={handleChange}
                         minLength={6}
-                        data-testid='pass-input'
                         disabled={currentUser}
+                        data-testid='pass-testid'
                     />
 
                     <ButtonDiv>
                         <SigninButton
                             onClick={handleSubmit} disabled={currentUser}
-                            data-testid='signin-button'
+                            data-testid='signin-button-testid'
                         >
                             Sign In
                         </SigninButton>
                         <GoogleButton 
                             onClick={logGoogleUser} disabled={currentUser}
-                            data-testid='google-button'
+                            data-testid='google-button-testid'
                         >
                             Google Sign In
                         </GoogleButton>
