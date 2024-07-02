@@ -16,3 +16,9 @@ redux-persist
     index.js
         add PersistGate wrapper
 
+Git
+    git clone -b feature/redux-persist https://github.com/LubaGmail/react-store-redux.git
+    git checkout feature/redux-persist
+    npm i               npm start
+
+
