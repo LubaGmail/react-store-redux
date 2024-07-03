@@ -12,7 +12,7 @@ const ProductsList = () => {
   return (
     <>
       <Logo>
-        <Link to='/shop'>Shop Now!</Link>
+        <Link to='/shop'>Featured Product - Shop Now!</Link>
       </Logo>
 
       <ProductsContainer>
