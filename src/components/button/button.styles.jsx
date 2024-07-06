@@ -33,6 +33,12 @@ export const GoogleButton = styled(BaseButton)`
     }
 `
 
+export const DisabledButton = styled(BaseButton)`
+    background-color: silver;
+    color: darkgray;
+    cursor: not-allowed;
+`
+
 export const CheckoutButton = styled(BaseButton)`
     background-color:#1b54b1;
     color: white;
@@ -44,10 +50,6 @@ export const CheckoutButton = styled(BaseButton)`
 `
 export const ProductButton = styled(BaseButton)`
     background-color: #bc2424;
-   color: white;
+    color: white;
 `
-
-
-
-    
 

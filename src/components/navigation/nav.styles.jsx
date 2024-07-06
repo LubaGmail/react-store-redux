@@ -11,7 +11,7 @@ export const NavContainer = styled.div`
   background-color: #F6E3BA;
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled.a`
   height: 100%;
   width: 70px;
   padding: 25px;

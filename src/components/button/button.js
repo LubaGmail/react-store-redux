@@ -2,14 +2,16 @@ import {
     BaseButton,
     GoogleButton,
     ProductButton,
-    CheckoutButton
+    CheckoutButton,
+    DisabledButton
 } from "./button.styles";
 
 export const BUTTON_TYPES = {
     base: 'baseType',
     google: 'googleType',
     product: 'productType',
-    checkout: 'checkoutType'
+    checkout: 'checkoutType',
+    disabled: 'disabledType'
 }
 
 const getButton = (buttonType = BUTTON_TYPES.base) => {
@@ -19,6 +21,7 @@ const getButton = (buttonType = BUTTON_TYPES.base) => {
             [BUTTON_TYPES.google]: GoogleButton,
             [BUTTON_TYPES.product]: ProductButton,
             [BUTTON_TYPES.checkout]: CheckoutButton,
+            [BUTTON_TYPES.disabled]: DisabledButton,
         }[buttonType]     // 'googleType'  
     )
 }
