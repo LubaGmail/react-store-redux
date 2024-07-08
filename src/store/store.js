@@ -25,7 +25,7 @@ export const store = createStore (
 )
 export const persistor = persistStore(store)
 
-// with logger middleware
+// with custom logger middleware
 // export const store = createStore(rootReducer, undefined, composedEnhancers);
 // export const store = createStore(rootReducer);
 
