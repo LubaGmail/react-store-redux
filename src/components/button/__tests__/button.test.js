@@ -27,7 +27,7 @@ describe('test onClick', () => {
         const mockFn = jest.fn(console.log('clicked!'));
         render(<Button onclick={mockFn}>Test</Button>)
 
-        const el = screen.getByRole("button")
+        const el = screen.getByText(/Test/i)
         fireEvent.click(el);
         expect(mockFn).toHaveBeenCalledTimes(1);
     })
