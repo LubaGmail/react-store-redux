@@ -1,4 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
+
 import Button, { BUTTON_TYPES } from '../button';
 
 describe('button tests', () => {
@@ -18,4 +20,15 @@ describe('button tests', () => {
     
         expect(screen.getByRole('button')).toHaveStyle('cursor: not-allowed');
     });
+})
+
+describe('test onClick', () => {
+    test('trigger clicking the button', () => {
+        const mockFn = jest.fn(console.log('clicked!'));
+        render(<Button onclick={mockFn}>Test</Button>)
+
+        const el = screen.getByRole("button")
+        fireEvent.click(el);
+        expect(mockFn).toHaveBeenCalledTimes(1);
+    })
 })
