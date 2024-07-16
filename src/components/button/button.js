@@ -27,11 +27,11 @@ const getButton = (buttonType = BUTTON_TYPES.base) => {
 }
 
 //   <Button buttonType='googleType'
-const Button = ({ children, buttonType, onclick }) => {
+const Button = ({ children, buttonType, onclick, isloading }) => {
     const CustomButton = getButton(buttonType)
     
     return (
-        <CustomButton onClick={onclick}
+        <CustomButton onClick={onclick} disabled={isloading}
         >
             {children}
         </CustomButton>

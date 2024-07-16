@@ -20,6 +20,11 @@ describe('button tests', () => {
     
         expect(screen.getByRole('button')).toHaveStyle('cursor: not-allowed');
     });
+    it('button to be disabled when isloading prop is true', () => {
+        render(<Button isloading={true}>Test</Button>);
+        const el = screen.getByText(/Test/i)
+        expect(el).toHaveAttribute('disabled');
+    })
 })
 
 describe('test onClick', () => {
