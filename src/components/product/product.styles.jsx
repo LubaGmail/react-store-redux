@@ -7,7 +7,6 @@ export const FooterContainer = styled.div `
     justify-content: space-between;
     font-size: 20px;
     font-weight: 500;
-  
 `
 export const ProductContainer = styled.div `
     width: 100%;
@@ -51,5 +50,4 @@ export const ProductContainer = styled.div `
         display: flex;
       }
     }
- 
 `

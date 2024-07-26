@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ImageContainer = styled.td `
     width: 15%;
-
     img {
         width: 100%;
         height: 100%;

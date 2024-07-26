@@ -5,5 +5,4 @@ export const AuthContainer = styled.div `
     justify-content: space-between;
     margin: 2rem auto;
     width: 900px;
-
 `

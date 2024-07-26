@@ -10,7 +10,6 @@ export const Title = styled.h2 `
     margin-bottom: 25px;
     cursor: pointer;
 `
-
 export const Preview = styled.div `
     display: grid;
     grid-template-columns: repeat(4, 1fr);

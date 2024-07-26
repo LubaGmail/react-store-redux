@@ -17,6 +17,17 @@ code {
   box-sizing: border-box;
 }
 
+.center {
+  margin: auto;
+  text-align: center;
+  justify-content: center;    // horizontal
+  align-items: center;        // vertical
+}
+
+ul, li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -26,17 +37,7 @@ button {
   cursor: pointer;
 }
 
-ul, li {
-  list-style: none;
-}
-
 table, th, td {
   border: 2px solid black;
 }
 
-.center {
-  margin: auto;
-  text-align: center;
-  justify-content: center;    // horizontal
-  align-items: center;        // vertical
-}

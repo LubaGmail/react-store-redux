@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import ProductsList from '../../components/products/products-list.jsx';
+import ProductsList from '../../components/products/products-list';
 import { PRODUCTS_ACTION_TYPES } from '../../store/products/products.types';
 import { getAllProducts } from '../../utils/firebase/firebase';
-import { createAction } from '../../utils/reducer/reducer.utils.js';
+import { createAction } from '../../utils/reducer/reducer.utils';
 
 const Home = () => {
   const dispatch = useDispatch();

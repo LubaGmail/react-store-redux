@@ -8,7 +8,6 @@ export const CheckoutContainer = styled.div `
     align-items: center;
     align-content: center;
     margin: 2rem auto;
-
     
     table {
         border-collapse: collapse;
@@ -52,8 +51,8 @@ export const CheckoutContainer = styled.div `
         color: silver;
         cursor: none;
     }
-
 `
+
 
 
 
